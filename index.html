@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="./components/webcomponentsjs/webcomponents-lite.min.js">
+  </script>
+  <link rel="import" href="components/marked-element/marked-element.html">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <title>ashmer</title>
+  <style media="screen">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="text1" rows="8" cols="40"></textarea>
+  <script type="text/javascript">
+    document.getElementById('text1').addEventListener("keyup", function() {
+      document.getElementById('polymermd').markdown = document.getElementById('text1').value;
+    });
+  </script>
+
+  <marked-element markdown="" id="polymermd">
+    <div class="markdown-html"></div>
+  </marked-element>
+</body>
+
+</html>
